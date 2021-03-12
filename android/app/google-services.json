@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "6072231761",
+    "firebase_url": "https://mqcanteen.firebaseio.com",
+    "project_id": "mqcanteen",
+    "storage_bucket": "mqcanteen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6072231761:android:2906a51eb5b22528579570",
+        "android_client_info": {
+          "package_name": "com.mqcanteen.fluttercanteen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6072231761-ie8i5bgsqnp675kag8o0takv2prosp6i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGzkkyREUGTOqCa1kftGrcsYyOiKqse_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "6072231761-ie8i5bgsqnp675kag8o0takv2prosp6i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

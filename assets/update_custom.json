@@ -1,0 +1,10 @@
+{
+  "hasUpdate": true,
+  "isIgnorable": false,
+  "versionCode": 3,
+  "versionName": "1.0.2",
+  "updateLog": "\r\n1、报餐二维码自动生成与识别。\r\n2、优化相机兼容性。\r\n3、菜品图片增加点击放大功能。\r\n4、设置自定义头像功能。\n5、添加安卓自动更新功能。\n6、增加菜品分类管理功能。\n7、设置报餐截至时间和价格功能。\n8、设置自定义头像功能。",
+  "apkUrl": "http://source.yangguangshitang.com/version/ygst-1.0.2.apk",
+  "apkSize": 40960
+}
+

@@ -1,0 +1,102 @@
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+apply plugin: 'com.android.application'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+
+def keystorePropertiesFile = rootProject.file("key.properties")
+def keystoreProperties=new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    compileSdkVersion 28
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    defaultConfig {
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: "com.mqcanteen.fluttercanteen",
+                JPUSH_APPKEY : "95fef60913d4c8caaf8073e9", // NOTE: JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL: "flutter_channel", //暂时填写默认值即可.
+        ]
+
+        ndk {
+            //选择要添加的对应 cpu 类型的 .so 库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'x86', 'x86_64', 'mips', 'mips64', 'arm64-v8a'
+            // 还可以添加
+        }
+
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.mqcanteen.fluttercanteen"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        vectorDrawables.useSupportLibrary = true
+
+        /*针对打包新加的*/
+        signingConfigs {
+            release {
+                keyAlias 'key'
+                keyPassword '123456'
+                storeFile file('key/key.jks')
+                storePassword '123456'
+            }
+        }
+        /*针对打包新加的*/
+
+        buildTypes {
+            release {
+                signingConfig signingConfigs.release
+            }
+        }
+
+        aaptOptions {
+            noCompress "tflite"
+            noCompress "lite"
+        }
+    }
+
+    flutter {
+        source '../..'
+    }
+
+    dependencies {
+        implementation 'com.google.firebase:firebase-ml-vision:24.0.1'
+        // Face model
+        implementation 'com.google.firebase:firebase-ml-vision-face-model:19.0.0'
+        // Custom model
+        implementation 'com.google.firebase:firebase-ml-model-interpreter:22.0.1'
+        testImplementation 'junit:junit:4.12'
+        androidTestImplementation 'androidx.test:runner:1.1.1'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+        implementation 'org.tensorflow:tensorflow-lite:+'
+    }
+    apply plugin: 'com.google.gms.google-services'
+}

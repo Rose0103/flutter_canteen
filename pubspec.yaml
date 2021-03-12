@@ -1,0 +1,162 @@
+name: flutter_canteen
+description: A new Flutter application.
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.2.1+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  pull_to_refresh: ^1.5.7
+  cupertino_icons: ^0.1.2
+  dio: ^3.0.3
+  flutter_swiper: ^1.1.6
+  flutter_screenutil: ^0.6.0
+  flutter_circular_chart: ^0.1.0
+  url_launcher: ^5.1.4
+  fluro: ^1.5.1
+  image_picker: ^0.6.2+1
+  image_crop: ^0.3.0
+  #path_provider: ^1.6.5
+  provide: ^1.0.2
+  flutter_easyrefresh: ^1.2.7
+  fluttertoast: ^3.0.1
+  flutter_html: ^0.11.0
+  city_pickers: ^0.1.28
+  json_serializable: ^3.1.0
+  shared_preferences: ^0.5.3+4
+  apifm: ^1.0.0
+  pin_input_text_field: ^0.0.1
+  animatedloginbutton: ^0.1.1
+  flutter_cupertino_date_picker: ^1.0.12
+  select_dialog: ^1.0.6+1
+  camera: 0.5.7+4
+  image: ^2.1.4
+  permission_handler: ^4.0.0
+  flutter_xupdate: ^0.0.3
+  flutter_slidable: ^0.5.4
+  screen_ratio_adapter: ^0.0.2
+ #https://pub:dev/packages/qr_flutter#-readme-tab-:
+  qr_flutter: ^3.1.0
+  #device_info : ^0.2.0
+  # https://pub.dev/packages/badges 红点地址
+  badges: ^1.1.0
+  # https://pub.dev/packages/webview_flutter#-installing-tab- webview 官方插件
+  #webview_flutter: ^0.3.18
+  flutter_webview_plugin: ^0.3.10+1
+  photo_view: ^0.8.0
+  audioplayers: ^0.15.1
+  fluwx: ^2.0.9
+  # https://github.com/jpush/jpush-flutter-plugin 极光推送
+  jpush_flutter:
+    path: ../jpush-flutter-plugin
+  flutter_image_compress: ^0.6.0
+  sqflite: ^1.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  #flutter_tts:
+  #  path: ../flutter_tts-master
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/btn_baocan_default.png
+    - assets/images/img_welcome.png   #欢迎图片
+    - assets/images/btn_back.png      #箭头图标
+    - assets/images/btn_baocan_default.png  #确认报餐图标
+    - assets/images/btn_bubao_default.png #不报餐图标
+    - assets/images/btn_liucan_default.png #留餐图标
+    - assets/images/btn_baocan_press.png  #确认报餐图标
+    - assets/images/btn_bubao_press.png #不报餐图标
+    - assets/images/btn_liucan_press.png #留餐图标
+    - assets/images/btn_caipin_default.png #菜品
+    - assets/images/icon_lbiao.png #快速点餐竖线图标
+    - assets/images/icon_tubiao2.png #白色按钮图标
+    - assets/images/nav_usercenter_unselected.png #用户中心图标
+    - assets/images/nav_baocandc_unselected.png #报餐点餐图标
+    - assets/images/nav_yanggst_unselected.png #阳光食堂图标
+    - assets/images/nav_usercenter_selected.png #用户中心图标
+    - assets/images/nav_baocandc_selected.png #报餐点餐图标
+    - assets/images/nav_yanggst_selected.png #阳光食堂图标
+    - assets/images/btn_houyt_default.png   #后一天图标
+    - assets/images/btn_qianyt_default.png  #前一天图标
+    - assets/images/btn_shuaxink.png #刷新按钮
+    - assets/images/icon_shuaxin.png #刷新icon
+    - assets/images/nav_jiuctj_unselected.png #就餐统计图标
+    - assets/images/icon_zaocan.png #早餐icon
+    - assets/images/icon_wucan.png #午餐icon
+    - assets/images/icon_wancan.png #晚餐icon
+    - assets/images/empty1.png #空白页
+    - assets/images/icon_dakai.png #右边箭头按钮
+    - assets/images/btn_qiyongcp_selected.png #右边箭头按钮
+    - assets/images/btn_add_selected.png #右边箭头按钮
+    - assets/images/btn_backs.png #右边箭头按钮
+    - assets/images/logo.png #右边箭头按钮
+    - assets/images/QRcode.png #二维码图标
+    - assets/images/splash.png
+    - assets/images/BG.png
+    - assets/images/usercenterBG.png
+    - assets/images/dingdanBG.png
+    - assets/images/mainpageBG.png
+    - assets/update_custom.json
+    - assets/voice.mp3
+    - assets/images/collect.png
+    - assets/images/expand.png
+    - assets/images/member.png
+    - assets/images/head.png
+    - assets/images/null.png
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
